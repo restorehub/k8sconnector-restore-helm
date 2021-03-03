@@ -1,8 +1,0 @@
-apiVersion: k8s.restorehub.co/v1beta2
-kind: Restore
-metadata:
-  name: rhub-restore-{{ .Values.repoName }}-{{ .Values.snapshotId }}-{{ .Values.restoreId }}
-spec:
-  repoName: {{ .Values.repoName }}
-  snapshotId: {{ .Values.snapshotId }}
-  restoreId: {{ .Values.restoreId }}
