@@ -7,9 +7,9 @@ spec:
     spec:
       containers:
       - name: rhub-restore-{{ .Values.restoreId }}
-        image: restorehub/k8sconnector:v0.4
+        image: restorehub/k8sconnector:v0.6
         imagePullPolicy: IfNotPresent
-        command: ["./connector",  "restore", "{{ .Values.restoreId }}"]
+        command: ["./connector",  "restore", "{{ .Values.restoreId }}", "{{ .Values.snapshotId }}"]
       restartPolicy: Never
   backoffLimit: 50
 
