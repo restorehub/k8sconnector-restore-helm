@@ -7,9 +7,9 @@ spec:
     spec:
       containers:
       - name: rhub-restore-{{ .Values.restoreId }}
-        image: restorehub/k8sconnector:v0.8
+        image: curlimages/curl:7.76.1
         imagePullPolicy: IfNotPresent
-        command: ["./connector",  "restore", "{{ .Values.restoreId }}", "{{ .Values.snapshotName }}"]
+        command:  ["curl",  "gmbadges-restorehub.gm.svc.cluster.local:30900/restores", "--data", '{"SnapshotId":"{{ .Values.snapshotId }}", "RepoName": "{{ .Values.repoName }}", "SnapshotName": "{{ .Values.snapshotName }}", "ID": "{{ .Values.restoreId }}" }']
       restartPolicy: Never
   backoffLimit: 50
 
