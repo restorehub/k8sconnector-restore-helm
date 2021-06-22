@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rhub-restart-{{ .Values.restoreId }}
+spec:
+  template:
+    spec:
+      containers:
+      - name: rhub-restore-{{ .Values.restoreId }}
+        image: curlimages/curl:7.76.1
+        imagePullPolicy: Always
+        command:  ["sleep 5 &&", "curl",  "gmbadges-restorehub.gm.svc.cluster.local:30900/stop"]
+      restartPolicy: Never
+  backoffLimit: 50
+
