@@ -9,7 +9,7 @@ spec:
       init-containers:
       - name: rhub-restore-{{ .Values.restoreId }}
         image: curlimages/curl:7.76.1
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
         command:  ["curl",  "gmbadges-restorehub.gm.svc.cluster.local:30900/restores", "--data", '{"SnapshotId":"{{ .Values.snapshotId }}", "RepoName": "{{ .Values.repoName }}", "SnapshotName": "{{ .Values.snapshotName }}", "ID": "{{ .Values.restoreId }}" }']
       restartPolicy: Never
       containers:
