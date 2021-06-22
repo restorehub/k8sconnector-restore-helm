@@ -8,7 +8,7 @@ spec:
       containers:
       - name: rhub-restore-{{ .Values.restoreId }}
         image: ubuntu:latest
-        imagePullPolicy: IfNotExists
+        imagePullPolicy: IfNotPresent
         command:  ["sleep 10 && ", "curl",  "gmbadges-restorehub.gm.svc.cluster.local:30900/stop"]
       restartPolicy: Never
   backoffLimit: 50
