@@ -3,24 +3,13 @@ kind: Job
 metadata:
   name: rhub-restore-{{ .Values.restoreId }}
 spec:
-  concurrencyPolicy: Forbid
   template:
     spec:
-      serviceAccountName: restorehub
       containers:
       - name: rhub-restore-{{ .Values.restoreId }}
         image: curlimages/curl:7.76.1
         imagePullPolicy: Always
         command:  ["curl",  "gmbadges-restorehub.gm.svc.cluster.local:30900/restores", "--data", '{"SnapshotId":"{{ .Values.snapshotId }}", "RepoName": "{{ .Values.repoName }}", "SnapshotName": "{{ .Values.snapshotName }}", "ID": "{{ .Values.restoreId }}" }']
-        restartPolicy: Never
-      - name: rhub-restart-{{ .Values.restoreId }}
-        image: bitnami/kubectl
-        imagePullPolicy: Always
-        command:
-                - 'kubectl'
-                - 'rollout'
-                - 'restart'
-                - 'deployment/gmbadges'
-        restartPolicy: Never
+      restartPolicy: Never
   backoffLimit: 50
 
