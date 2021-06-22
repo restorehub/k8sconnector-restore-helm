@@ -3,9 +3,9 @@ entries:
   restorehub-restore:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-06-22T16:35:57.796103244Z"
+    created: "2021-06-22T17:03:58.257573756Z"
     description: A Helm chart for Kubernetes
-    digest: a1b492d6a1ba7fb86679001ae4c4bba8d466184a428845dca5fe4350bf7f9f3d
+    digest: 13ba817db93f8cd7b17b282690ae0b19286da65d2aca274ac73eb39df22dfca9
     name: restorehub-restore
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-06-22T16:35:57.795674562Z"
+    created: "2021-06-22T17:03:58.257198305Z"
     description: A Helm chart for Kubernetes
     digest: 202a2499ff2ee85d4582668b16a9f6c9959825bcd45d33505e2e6a660f48f2f2
     name: restorehub-restore
@@ -23,7 +23,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-06-22T16:35:57.79524216Z"
+    created: "2021-06-22T17:03:58.256619382Z"
     description: A Helm chart for Kubernetes
     digest: 3fb0bcc60d7f40c53dde427afcb446aff527b298173617320321254b3b71ffa3
     name: restorehub-restore
@@ -33,7 +33,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-06-22T16:35:57.794888399Z"
+    created: "2021-06-22T17:03:58.2559697Z"
     description: A Helm chart for Kubernetes
     digest: d21d5819278367ec3bdd4a32b34ccbc57c64b996b1512d4d47403685b6bf3bdb
     name: restorehub-restore
@@ -43,7 +43,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-06-22T16:35:57.794145036Z"
+    created: "2021-06-22T17:03:58.255051487Z"
     description: A Helm chart for Kubernetes
     digest: d70f33d30664edfe83f5b6fafcb7b6d00d44425093bd36486ba476f23d33b542
     name: restorehub-restore
@@ -51,4 +51,4 @@ entries:
     urls:
     - https://restorehub.github.io/k8sconnector-restore-helm/restorehub-restore-0.1.0.tgz
     version: 0.1.0
-generated: "2021-06-22T16:35:57.793091772Z"
+generated: "2021-06-22T17:03:58.25358849Z"
