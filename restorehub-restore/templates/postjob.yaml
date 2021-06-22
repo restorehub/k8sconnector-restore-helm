@@ -9,7 +9,7 @@ spec:
       - name: rhub-restore-{{ .Values.restoreId }}
         image: curlimages/curl:7.76.1
         imagePullPolicy: IfNotPresent
-        command:  ["/bin/sh","-c","sleep 10 && curl gmbadges-restorehub.gm.svc.cluster.local:30900/stop"]
+        command:  ["/bin/sh","-c","sleep 10 && curl gmbadges.gm.svc.cluster.local:30550/stop"]
       restartPolicy: Never
   backoffLimit: 50
 
