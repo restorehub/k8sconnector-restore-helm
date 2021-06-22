@@ -5,15 +5,22 @@ metadata:
 spec:
   template:
     spec:
-      containers:
+      serviceAccountName: restorehub
+      init-containers:
       - name: rhub-restore-{{ .Values.restoreId }}
         image: curlimages/curl:7.76.1
         imagePullPolicy: IfNotPresent
         command:  ["curl",  "gmbadges-restorehub.gm.svc.cluster.local:30900/restores", "--data", '{"SnapshotId":"{{ .Values.snapshotId }}", "RepoName": "{{ .Values.repoName }}", "SnapshotName": "{{ .Values.snapshotName }}", "ID": "{{ .Values.restoreId }}" }']
       restartPolicy: Never
+      containers:
+      - name: rhub-restart-{{ .Values.restoreId }}
+        image: bitnami/kubectl
+        imagePullPolicy: IfNotPresent
+        command:
+                - 'kubectl'
+                - 'rollout'
+                - 'restart'
+                - 'deployment/gmbadges'
+      restartPolicy: Never
   backoffLimit: 50
 
-# spec:
-#  repoName: {{ .Values.repoName }}
-#  snapshotId: {{ .Values.snapshotId }}
-#  restoreId: {{ .Values.restoreId }}
